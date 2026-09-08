@@ -14,16 +14,16 @@ import cartRoutes from './routes/cartRoutes.js'
 import './utils/cronJobs.js';
 
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs';
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
 ConnectDb();
-
-app.get('/', (req, res)=>{
-    res.send('Pizza Delivery API Running');
-})
 
 app.use("/auth/api", authRoutes)
 app.use("/api/pizzas", pizzaRoutes);
@@ -35,6 +35,26 @@ app.use("/api/users", userRoutes);
 app.use("/api/admin/notifications", notificationRoutes);
 app.use("/api/payment", paymentRoutes);
 app.use("/api/cart", cartRoutes);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const altClientDistPath = path.resolve(__dirname, '../client/dist');
+const clientDistPath = path.resolve(__dirname, '../../client/dist');
+const distPath = fs.existsSync(altClientDistPath) ? altClientDistPath : (fs.existsSync(clientDistPath) ? clientDistPath : null);
+
+if (distPath) {
+    app.use(express.static(distPath));
+    app.get('*', (req, res, next) => {
+        if (req.path.startsWith('/api') || req.path.startsWith('/auth')) {
+            return next();
+        }
+        res.sendFile(path.join(distPath, 'index.html'));
+    });
+} else {
+    app.get('/', (req, res) => {
+        res.send('Pizza Delivery API Running');
+    });
+}
 
 const PORT = process.env.PORT || 3000;
 
