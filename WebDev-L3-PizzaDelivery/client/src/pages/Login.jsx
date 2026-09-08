@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 export default function Login() {
   const navigate = useNavigate();
 
@@ -27,7 +29,7 @@ export default function Login() {
     try {
 
       const response = await axios.post(
-        "http://localhost:3000/auth/api/login",
+        `${API_URL}/auth/api/login`,
         form
       );
 

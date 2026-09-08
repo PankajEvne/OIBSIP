@@ -1,0 +1,11 @@
+{
+  "name": "pizzahub-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pizza Delivery Full Stack Web Application",
+  "scripts": {
+    "install:all": "npm --prefix WebDev-L3-PizzaDelivery/server install && npm --prefix WebDev-L3-PizzaDelivery/client install",
+    "build": "npm --prefix WebDev-L3-PizzaDelivery/client run build",
+    "start": "npm --prefix WebDev-L3-PizzaDelivery/server start"
+  }
+}

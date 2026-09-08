@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 export default function Register() {
 
     const navigate = useNavigate();
@@ -28,7 +30,7 @@ export default function Register() {
         try {
 
             const response = await axios.post(
-                "http://localhost:3000/auth/api/register",
+                `${API_URL}/auth/api/register`,
                 form
             );
             setMessage(response.data.message || "Registration successful! Please check your email to verify your account.");
