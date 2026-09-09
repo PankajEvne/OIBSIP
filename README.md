@@ -4,6 +4,16 @@ A full-stack pizza ordering and custom DIY builder web application built with **
 
 ---
 
+## 🔗 Live Deployment Links
+
+| Service | Platform | Live URL | Status |
+| :--- | :--- | :--- | :--- |
+| **Frontend Web App** | Render (Static Site) | [https://pizzahub-frontend.onrender.com](https://pizzahub-frontend.onrender.com) | [![Render Frontend](https://img.shields.io/badge/Render-Live-success?style=flat-square&logo=render)](https://pizzahub-frontend.onrender.com) |
+| **Backend API** | Render (Web Service) | [https://pizzahub-backend.onrender.com](https://pizzahub-backend.onrender.com) | [![Render Backend](https://img.shields.io/badge/API-Active-blue?style=flat-square&logo=render)](https://pizzahub-backend.onrender.com) |
+| **GitHub Repo** | GitHub | [https://github.com/PankajEvne/OIBSIP](https://github.com/PankajEvne/OIBSIP) | [![GitHub](https://img.shields.io/badge/Repo-PankajEvne%2FOIBSIP-black?style=flat-square&logo=github)](https://github.com/PankajEvne/OIBSIP) |
+
+---
+
 ## 🌟 Key Features
 
 ### 🖥️ Public Website
@@ -45,8 +55,8 @@ A full-stack pizza ordering and custom DIY builder web application built with **
 ## 📁 Project Structure
 
 ```
-PIZZA/
-├── client/                 # Frontend React application
+OIBSIP/
+├── client/                 # Frontend React application (Vite)
 │   ├── src/
 │   │   ├── components/     # Navbar, Footer, PizzaBuilder, ProtectedRoute
 │   │   ├── pages/          # Home, Menu, About, Contact, Dashboard, Admin, Login, Register, ForgotPassword
@@ -144,6 +154,27 @@ npm run dev
 ```
 
 Open your browser and navigate to: **`http://localhost:5173`**
+
+---
+
+## ☁️ Deploying on Render
+
+This project is pre-configured for seamless deployment on [Render](https://render.com):
+
+### 1. Backend Service (Web Service)
+- **Repository**: Connect your GitHub repository (`OIBSIP`)
+- **Root Directory**: `server`
+- **Environment**: `Node`
+- **Build Command**: `npm install`
+- **Start Command**: `npm start`
+- **Environment Variables**: Add variables from `server/.env.example` (`MONGODB_URI`, `JWT_SECRET`, `SMTP_*`, `RAZORPAY_*`, `CLIENT_URL`).
+
+### 2. Frontend Service (Static Site)
+- **Root Directory**: `client`
+- **Build Command**: `npm install && npm run build`
+- **Publish Directory**: `dist`
+- **Environment Variables**: 
+  - `VITE_API_URL`: Your deployed backend URL (e.g. `https://pizzahub-backend.onrender.com`)
 
 ---
 
