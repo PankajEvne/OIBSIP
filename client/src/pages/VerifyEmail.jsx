@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
-const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? "" : "http://localhost:3000");
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 export default function VerifyEmail() {
   const { token } = useParams();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? "" : "http://localhost:3000");
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 const STATUS_COLORS = {
   "Order Received": "bg-blue-500/15 text-blue-400 border-blue-500/30",
   "In Kitchen": "bg-amber-500/15 text-amber-400 border-amber-500/30",

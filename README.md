@@ -4,15 +4,6 @@ A full-stack pizza ordering and custom DIY builder web application built with **
 
 ---
 
-## 🔗 Live Application Link
-
-[![Live App](https://img.shields.io/badge/Live_App-PizzaHub-brightgreen?style=for-the-badge&logo=render)](https://pizzahub-app.onrender.com)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/PankajEvne/OIBSIP)
-
-- 🌐 **Single Unified URL (Frontend + Backend API)**: [https://pizzahub-app.onrender.com](https://pizzahub-app.onrender.com)
-
----
-
 ## 🌟 Key Features
 
 ### 🖥️ Public Website
@@ -54,8 +45,8 @@ A full-stack pizza ordering and custom DIY builder web application built with **
 ## 📁 Project Structure
 
 ```
-OIBSIP/
-├── client/                 # Frontend React application (Vite)
+PIZZA/
+├── client/                 # Frontend React application
 │   ├── src/
 │   │   ├── components/     # Navbar, Footer, PizzaBuilder, ProtectedRoute
 │   │   ├── pages/          # Home, Menu, About, Contact, Dashboard, Admin, Login, Register, ForgotPassword
@@ -153,28 +144,6 @@ npm run dev
 ```
 
 Open your browser and navigate to: **`http://localhost:5173`**
-
----
-
-## ☁️ Deploying on Render (Single Web Service)
-
-This full-stack project is configured to run on **a single unified Web Service on Render** (serving both the React Frontend and Node.js Express APIs from the same domain):
-
-1. Go to [dashboard.render.com](https://dashboard.render.com) and click **New +** -> **Web Service**.
-2. Connect your GitHub repository: `https://github.com/PankajEvne/OIBSIP`.
-3. Configure the service:
-   - **Name**: `pizzahub-app`
-   - **Root Directory**: `server`
-   - **Environment**: `Node`
-   - **Build Command**: `npm install && npm run build`
-   - **Start Command**: `npm start`
-4. Add Environment Variables (from `server/.env.example`):
-   - `MONGODB_URI`: Your MongoDB Atlas connection string
-   - `JWT_SECRET`: Secret key for JWT tokens
-   - `SMTP_USER`, `SMTP_PASS`, `ADMIN_EMAIL`: Gmail credentials for auth & order emails
-   - `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`: Razorpay keys
-   - `CLIENT_URL`: `https://pizzahub-app.onrender.com`
-5. Click **Deploy Web Service**! Both the frontend website and backend APIs will be live on this single link.
 
 ---
 
