@@ -45,27 +45,29 @@ A full-stack pizza ordering and custom DIY builder web application built with **
 ## 📁 Project Structure
 
 ```
-PIZZA/
-├── client/                 # Frontend React application
-│   ├── src/
-│   │   ├── components/     # Navbar, Footer, PizzaBuilder, ProtectedRoute
-│   │   ├── pages/          # Home, Menu, About, Contact, Dashboard, Admin, Login, Register, ForgotPassword
-│   │   ├── data/           # Shared pizza datasets
-│   │   ├── App.jsx         # Routes definition
-│   │   └── main.jsx
-│   ├── .env.example
-│   └── package.json
-├── server/                 # Backend Node.js / Express API
-│   ├── config/             # Database connection
-│   ├── controllers/        # Auth, Order, Pizza, Payment, Inventory, Cart
-│   ├── middleware/         # JWT Auth & Admin guards
-│   ├── models/             # User, Order, Pizza, Inventory, Notification, Cart
-│   ├── routes/             # Express API routes
-│   ├── utils/              # Email transporter & Cron jobs
-│   ├── .env.example
-│   └── package.json
-├── .gitignore              # Git ignore rules for node_modules and .env files
-└── README.md
+OIBSIP/
+└── WebDev-L3-PizzaDelivery/
+    ├── frontend/               # React 19 + Tailwind CSS + Vite Frontend
+    │   ├── src/
+    │   │   ├── components/     # Navbar, Footer, PizzaBuilder, ProtectedRoute
+    │   │   ├── pages/          # Home, Menu, About, Contact, Dashboard, Admin, Login, Register, ForgotPassword
+    │   │   ├── data/           # Shared pizza datasets
+    │   │   ├── App.jsx         # Routes definition
+    │   │   └── main.jsx
+    │   ├── public/             # Icons, favicon, _redirects
+    │   ├── .env.example
+    │   └── package.json
+    ├── backend/                # Node.js / Express API Server
+    │   ├── config/             # MongoDB Atlas connection
+    │   ├── controllers/        # Auth, Order, Pizza, Payment, Inventory, Cart
+    │   ├── middleware/         # JWT Auth & Admin guards
+    │   ├── models/             # User, Order, Pizza, Inventory, Notification, Cart
+    │   ├── routes/             # Express API routes
+    │   ├── utils/              # Email transporter & Cron jobs
+    │   ├── .env.example
+    │   └── package.json
+    ├── screenshots/            # Application demo screenshots
+    └── README.md
 ```
 
 ---
@@ -81,19 +83,19 @@ PIZZA/
 
 ### 2. Installation
 
-Clone the repository and install dependencies for both `client` and `server`:
+Clone the repository and install dependencies for both `frontend` and `backend`:
 
 ```bash
 # Clone repository
-git clone https://github.com/<your-username>/pizza-delivery-app.git
-cd pizza-delivery-app
+git clone https://github.com/PankajEvne/OIBSIP.git
+cd OIBSIP/WebDev-L3-PizzaDelivery
 
-# Install server dependencies
-cd server
+# Install backend dependencies
+cd backend
 npm install
 
-# Install client dependencies
-cd ../client
+# Install frontend dependencies
+cd ../frontend
 npm install
 ```
 
@@ -101,8 +103,8 @@ npm install
 
 ### 3. Environment Configuration
 
-#### Server (`server/.env`):
-Copy `server/.env.example` to `server/.env` and update with your credentials:
+#### Backend (`backend/.env`):
+Copy `backend/.env.example` to `backend/.env` and update with your credentials:
 ```env
 PORT=3000
 MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/pizzadb
@@ -121,8 +123,8 @@ RAZORPAY_KEY_ID=rzp_test_xxxxxx
 RAZORPAY_KEY_SECRET=xxxxxx
 ```
 
-#### Client (`client/.env`):
-Copy `client/.env.example` to `client/.env`:
+#### Frontend (`frontend/.env`):
+Copy `frontend/.env.example` to `frontend/.env`:
 ```env
 VITE_API_URL=http://localhost:3000
 ```
@@ -135,11 +137,11 @@ Start the backend server and frontend development server in separate terminals:
 
 ```bash
 # Terminal 1: Start backend server (runs on http://localhost:3000)
-cd server
+cd backend
 npm run dev
 
 # Terminal 2: Start frontend client (runs on http://localhost:5173)
-cd client
+cd frontend
 npm run dev
 ```
 

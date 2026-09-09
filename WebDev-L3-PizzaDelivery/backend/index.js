@@ -38,8 +38,8 @@ app.use("/api/cart", cartRoutes);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const altClientDistPath = path.resolve(__dirname, '../client/dist');
-const clientDistPath = path.resolve(__dirname, '../../client/dist');
+const altClientDistPath = path.resolve(__dirname, '../frontend/dist');
+const clientDistPath = path.resolve(__dirname, '../../frontend/dist');
 const distPath = fs.existsSync(altClientDistPath) ? altClientDistPath : (fs.existsSync(clientDistPath) ? clientDistPath : null);
 
 if (distPath) {
