@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { DEFAULT_PIZZAS } from '../data/pizzas';
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? "" : "http://localhost:3000");
 
 export default function Menu() {
   const [pizzas, setPizzas] = useState(DEFAULT_PIZZAS);

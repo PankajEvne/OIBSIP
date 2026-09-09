@@ -4,13 +4,12 @@ A full-stack pizza ordering and custom DIY builder web application built with **
 
 ---
 
-## 🔗 Live Deployment Links
+## 🔗 Live Application Link
 
-| Service | Platform | Live URL | Status |
-| :--- | :--- | :--- | :--- |
-| **Frontend Web App** | Render (Static Site) | [https://pizzahub-frontend.onrender.com](https://pizzahub-frontend.onrender.com) | [![Render Frontend](https://img.shields.io/badge/Render-Live-success?style=flat-square&logo=render)](https://pizzahub-frontend.onrender.com) |
-| **Backend API** | Render (Web Service) | [https://pizzahub-backend.onrender.com](https://pizzahub-backend.onrender.com) | [![Render Backend](https://img.shields.io/badge/API-Active-blue?style=flat-square&logo=render)](https://pizzahub-backend.onrender.com) |
-| **GitHub Repo** | GitHub | [https://github.com/PankajEvne/OIBSIP](https://github.com/PankajEvne/OIBSIP) | [![GitHub](https://img.shields.io/badge/Repo-PankajEvne%2FOIBSIP-black?style=flat-square&logo=github)](https://github.com/PankajEvne/OIBSIP) |
+[![Live App](https://img.shields.io/badge/Live_App-PizzaHub-brightgreen?style=for-the-badge&logo=render)](https://pizzahub-app.onrender.com)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/PankajEvne/OIBSIP)
+
+- 🌐 **Single Unified URL (Frontend + Backend API)**: [https://pizzahub-app.onrender.com](https://pizzahub-app.onrender.com)
 
 ---
 
@@ -157,24 +156,25 @@ Open your browser and navigate to: **`http://localhost:5173`**
 
 ---
 
-## ☁️ Deploying on Render
+## ☁️ Deploying on Render (Single Web Service)
 
-This project is pre-configured for seamless deployment on [Render](https://render.com):
+This full-stack project is configured to run on **a single unified Web Service on Render** (serving both the React Frontend and Node.js Express APIs from the same domain):
 
-### 1. Backend Service (Web Service)
-- **Repository**: Connect your GitHub repository (`OIBSIP`)
-- **Root Directory**: `server`
-- **Environment**: `Node`
-- **Build Command**: `npm install`
-- **Start Command**: `npm start`
-- **Environment Variables**: Add variables from `server/.env.example` (`MONGODB_URI`, `JWT_SECRET`, `SMTP_*`, `RAZORPAY_*`, `CLIENT_URL`).
-
-### 2. Frontend Service (Static Site)
-- **Root Directory**: `client`
-- **Build Command**: `npm install && npm run build`
-- **Publish Directory**: `dist`
-- **Environment Variables**: 
-  - `VITE_API_URL`: Your deployed backend URL (e.g. `https://pizzahub-backend.onrender.com`)
+1. Go to [dashboard.render.com](https://dashboard.render.com) and click **New +** -> **Web Service**.
+2. Connect your GitHub repository: `https://github.com/PankajEvne/OIBSIP`.
+3. Configure the service:
+   - **Name**: `pizzahub-app`
+   - **Root Directory**: `server`
+   - **Environment**: `Node`
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+4. Add Environment Variables (from `server/.env.example`):
+   - `MONGODB_URI`: Your MongoDB Atlas connection string
+   - `JWT_SECRET`: Secret key for JWT tokens
+   - `SMTP_USER`, `SMTP_PASS`, `ADMIN_EMAIL`: Gmail credentials for auth & order emails
+   - `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`: Razorpay keys
+   - `CLIENT_URL`: `https://pizzahub-app.onrender.com`
+5. Click **Deploy Web Service**! Both the frontend website and backend APIs will be live on this single link.
 
 ---
 
