@@ -1,5 +1,12 @@
 # 🍕 PizzaHub - Full-Stack Artisanal Pizza Web Application
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-brightgreen?style=for-the-badge&logo=render)](https://pizzahub-frontend-5m4f.onrender.com)
+[![Status](https://img.shields.io/badge/Status-Online-success?style=for-the-badge)](https://pizzahub-frontend-5m4f.onrender.com)
+
+🔗 **Live Deployment Link**: [https://pizzahub-frontend-5m4f.onrender.com](https://pizzahub-frontend-5m4f.onrender.com)
+
+---
+
 A full-stack pizza ordering and custom DIY builder web application built with **React**, **Tailwind CSS**, **Node.js / Express**, **MongoDB**, and **Razorpay Payment Gateway**.
 
 ---
